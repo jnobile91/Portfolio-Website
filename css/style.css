@@ -39,6 +39,10 @@
 }
 
 /* Style Settings */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: var(--clr-light);
     color: var(--clr-dark);
@@ -190,9 +194,28 @@ header {
     z-index: 1000;
 }
 
+.nav-open .nav {
+    transform: translateX(0);
+}
+
+.nav-open .nav-toggle {
+    position: fixed;
+}
+
+.nav-open .hamburger {
+    transform: rotate(.625turn); /* Used in conjunction with the .nav-open .hamburger::after transform effect to turn hamburger into an X */
+}
+
+.nav-open .hamburger::before {
+    transform: rotate(90deg) translateX(-6px); /* Used in conjunction with the .nav-open .hamburger transform effect to turn hamburger into an X */
+}
+
+.nav-open .hamburger::after {
+    opacity: 0;
+}
+
 /* --- Hamburger Menu Icon --- */
 .hamburger {
-    
     display: block;
     position: relative;
 }
@@ -200,7 +223,7 @@ header {
 .hamburger,
 .hamburger::before,
 .hamburger::after {
-    background: var(--clr-dark);
+    background: var(--clr-accent);
     width: 2em;
     height: 3px;
     border-radius: 1em;
