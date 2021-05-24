@@ -8,24 +8,20 @@
 :root {
     --ff-primary: 'Source Sans Pro', sans-serif;
     --ff-secondary: 'Source Code Pro', monospace;
-
     --fw-reg: 300;
     --fw-bold: 900;
-
     --clr-light: #fff;
     --clr-dark: #303030;
-    --clr-accent: #ff8500;
-    --clr-accent2: #16e0bd;
+    --clr-accent: #9779ff; /* Purple */
+    --clr-accent2: #ff8500; /* Orange */
+    --clr-accent3: #16e0bd; /* Mint/Green */
     --clr-mid: #646464;
-
     --fs-h1: 3rem;
     --fs-h2: 2.25rem;
     --fs-h3: 1.25rem;
     --fs-body: 1rem;
-
     /* Creates box shadow for image */
-    --bs: .25em .25em .75em rgba(0, 0, 0, .25),
-        .125em .125em .25em rgba(0, 0, 0, .15);
+    --bs: .25em .25em .75em rgba(0, 0, 0, .25), .125em .125em .25em rgba(0, 0, 0, .15);
 }
 
 /* Redefines font sizes for screens larger than 800px */
@@ -86,9 +82,9 @@ strong {
     transition: transform 100ms ease-in-out; /* Eases "hover" transformation */
 }
 
-.btn:hover {
-    transform: scale(1.1); /* Scales button up when hovering over button */
-}
+    .btn:hover {
+        transform: scale(1.1); /* Scales button up when hovering over button */
+    }
 
 /* Typography Settings */
 h1, h2, h3 {
@@ -116,10 +112,10 @@ h3 {
     font-weight: var(--fw-reg);
 }
 
-/* Separates "strong" text onto a new line */
-.section__title--intro strong {
-    display: block;
-}
+    /* Separates "strong" text onto a new line */
+    .section__title--intro strong {
+        display: block;
+    }
 
 .section__subtitle {
     margin: 0;
@@ -153,18 +149,17 @@ header {
     color: var(--clr-light);
     top: 0;
     bottom: 0;
-    left: 0;
+    left: 70%;
     right: 0;
     z-index: 100;
-
     transform: translateX(100%);
-    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+    transition: transform 500ms cubic-bezier(.5, 0, .5, 1);
 }
 
 .nav__list {
     list-style: none;
     display: flex;
-    height: 100%;
+    height: 30%;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
@@ -175,13 +170,14 @@ header {
 .nav__link {
     color: inherit;
     font-weight: var(--fw-bold);
-    font-size: var(--fs-h2);
+    font-size: var(--fs-h3);
     text-decoration: none;
 }
 
-.nav__link:hover {
-    color: var(--clr-accent);
-}
+    .nav__link:hover {
+        color: var(--clr-accent);
+        color: var(--clr-accent);
+    }
 
 .nav-toggle {
     padding: .5em;
@@ -206,13 +202,13 @@ header {
     transform: rotate(.625turn); /* Used in conjunction with the .nav-open .hamburger::after transform effect to turn hamburger into an X */
 }
 
-.nav-open .hamburger::before {
-    transform: rotate(90deg) translateX(-6px); /* Used in conjunction with the .nav-open .hamburger transform effect to turn hamburger into an X */
-}
+    .nav-open .hamburger::before {
+        transform: rotate(90deg) translateX(-6px); /* Used in conjunction with the .nav-open .hamburger transform effect to turn hamburger into an X */
+    }
 
-.nav-open .hamburger::after {
-    opacity: 0;
-}
+    .nav-open .hamburger::after {
+        opacity: 0;
+    }
 
 /* --- Hamburger Menu Icon --- */
 .hamburger {
@@ -220,31 +216,31 @@ header {
     position: relative;
 }
 
-.hamburger,
-.hamburger::before,
-.hamburger::after {
-    background: var(--clr-accent);
-    width: 2em;
-    height: 3px;
-    border-radius: 1em;
-    transition: transform 250ms ease-in-out;
-}
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        background: var(--clr-accent);
+        width: 2em;
+        height: 3px;
+        border-radius: 1em;
+        transition: transform 250ms ease-in-out;
+    }
 
-.hamburger::before,
-.hamburger::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-}
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
 
-.hamburger::before {
-    top: 6px;
-}
+        .hamburger::before {
+            top: 6px;
+        }
 
-.hamburger::after {
-    bottom: 6px;
-}
+        .hamburger::after {
+            bottom: 6px;
+        }
 
 /* --- Introduction --- */
 .intro {
@@ -253,6 +249,7 @@ header {
 
 .intro__image {
     box-shadow: var(--bs);
+    border: .5em solid var(--clr-dark);
 }
 
 /* Redefines layout for screens larger than 600px */
@@ -262,9 +259,7 @@ header {
         width: min-content;
         margin: 0 auto;
         grid-column-gap: 1em;
-        grid-template-areas:
-            "img title"
-            "img subtitle";
+        grid-template-areas: "img title" "img subtitle";
         grid-template-columns: min-content max-content;
     }
 
@@ -273,6 +268,7 @@ header {
         min-width: 250px;
         position: relative;
         z-index: 2; /* Sets image to appear above the accented text */
+        border: .5em solid var(--clr-dark);
     }
 
     /* Repositions accented text banner */
@@ -302,16 +298,16 @@ header {
     position: relative;
 }
 
-/* Small line between title and text underneath */
-.section__title--experience::after {
-    content: '';
-    display: block;
-    width: 30%;
-    height: 1px;
-    margin: .5em auto 1em;
-    background: var(--clr-light);
-    opacity: .3;
-}
+    /* Small line between title and text underneath */
+    .section__title--experience::after {
+        content: '';
+        display: block;
+        width: 30%;
+        height: 1px;
+        margin: .5em auto 1em;
+        background: var(--clr-light);
+        opacity: .3;
+    }
 
 .experiences {
     margin-bottom: 5em;
@@ -345,6 +341,7 @@ header {
 
 .about-me__img {
     box-shadow: var(--bs);
+    border: .5em solid var(--clr-dark);
 }
 
 /* Redefines layout for screens larger than 600px */
@@ -352,10 +349,7 @@ header {
     .about-me {
         display: grid;
         grid-template-columns: 1fr 200px;
-        grid-template-areas: 
-            "title img" 
-            "subtitle img" 
-            "text img";
+        grid-template-areas: "title img" "subtitle img" "text img";
         grid-column-gap: 2em;
     }
 
@@ -377,6 +371,7 @@ header {
         grid-area: img;
         position: relative;
         z-index: 2;
+        border: .5em solid var(--clr-dark);
     }
 }
 
@@ -405,9 +400,7 @@ header {
 }
 
 .portfolio__img {
-    transition: 
-        transform 750ms cubic-bezier(.5, 0, .5, 1),
-        opacity 250ms linear; /* Sets transform for hover effect */
+    transition: transform 750ms cubic-bezier(.5, 0, .5, 1), opacity 250ms linear; /* Sets transform for hover effect */
 }
 
 /* Adds outline to objects accessed via the "TAB" key above the adjacent images */
@@ -431,10 +424,954 @@ header {
     font-size: var(--fs-h3);
 }
 
-.footer a {
+    .footer a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+.footer__link {
+    font-weight: var(--fw-bold);
+}
+
+    .footer__link:hover,
+    .social-list__link:hover {
+        opacity: .7;
+    }
+
+    .footer__link:hover {
+        text-decoration: underline;
+    }
+
+.social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 0;
+    padding: 0;
+}
+
+.social-list__item {
+    margin: 0 .5em;
+}
+
+.social-list__link {
+    padding: .5em;
+}
+
+/* --- Portfolio Items --- */
+.portfolio-item-individual {
+    padding: 0 2em 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+    .portfolio-item-individual p {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Set custom properties */
+:root {
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+    --fw-reg: 300;
+    --fw-bold: 900;
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #9779ff; /* Purple */
+    --clr-accent2: #ff8500; /* Orange */
+    --clr-accent3: #16e0bd; /* Mint/Green */
+    --clr-mid: #646464;
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+    /* Creates box shadow for image */
+    --bs: .25em .25em .75em rgba(0, 0, 0, .25), .125em .125em .25em rgba(0, 0, 0, .15);
+}
+
+/* Redefines font sizes for screens larger than 800px */
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.755rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+/* Style Settings */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+section {
+    padding: 5em 2em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+strong {
+    font-weight: var(--fw-bold);
+}
+
+/* Adds outline to objects accessed via the "TAB" key */
+:focus {
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 3px;
+}
+
+/* --- Button --- */
+.btn {
+    display: inline-block;
+    padding: .75em 2.5em;
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 100ms ease-in-out; /* Eases "hover" transformation */
+}
+
+    .btn:hover {
+        transform: scale(1.1); /* Scales button up when hovering over button */
+    }
+
+/* Typography Settings */
+h1, h2, h3 {
+    line-height: 1;
+    margin: 0;
+}
+
+h1 {
+    font-size: var(--fs-h1);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+.section__title {
+    margin-bottom: .25em;
+}
+
+.section__title--intro {
+    font-weight: var(--fw-reg);
+}
+
+    /* Separates "strong" text onto a new line */
+    .section__title--intro strong {
+        display: block;
+    }
+
+.section__subtitle {
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--aboutme {
+    background: var(--clr-accent);
+    padding: .25em 1em;
+    font-family: var(--ff-secondary);
+    margin-bottom: 1em;
+}
+
+/* --- Header --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.logo {
+    max-width: 100px;
+}
+
+
+/* --- Navigation Menu --- */
+.nav {
+    position: fixed;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    left: 70%;
+    right: 0;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 500ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    height: 30%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__link {
     color: inherit;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h3);
     text-decoration: none;
 }
+
+    .nav__link:hover {
+        color: var(--clr-accent);
+        color: var(--clr-accent);
+    }
+
+.nav-toggle {
+    padding: .5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+}
+
+.nav-open .nav {
+    transform: translateX(0);
+}
+
+.nav-open .nav-toggle {
+    position: fixed;
+}
+
+.nav-open .hamburger {
+    transform: rotate(.625turn); /* Used in conjunction with the .nav-open .hamburger::after transform effect to turn hamburger into an X */
+}
+
+    .nav-open .hamburger::before {
+        transform: rotate(90deg) translateX(-6px); /* Used in conjunction with the .nav-open .hamburger transform effect to turn hamburger into an X */
+    }
+
+    .nav-open .hamburger::after {
+        opacity: 0;
+    }
+
+/* --- Hamburger Menu Icon --- */
+.hamburger {
+    display: block;
+    position: relative;
+}
+
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        background: var(--clr-accent);
+        width: 2em;
+        height: 3px;
+        border-radius: 1em;
+        transition: transform 250ms ease-in-out;
+    }
+
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+
+        .hamburger::before {
+            top: 6px;
+        }
+
+        .hamburger::after {
+            bottom: 6px;
+        }
+
+/* --- Introduction --- */
+.intro {
+    position: relative;
+}
+
+.intro__image {
+    box-shadow: var(--bs);
+    border: .5em solid var(--clr-dark);
+}
+
+/* Redefines layout for screens larger than 600px */
+@media (min-width: 600px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas: "img title" "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro__image {
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2; /* Sets image to appear above the accented text */
+        border: .5em solid var(--clr-dark);
+    }
+
+    /* Repositions accented text banner */
+    .section__subtitle--intro {
+        align-self: start;
+        grid-column: -1 / 1; /* Starts at the bottom, ends at the top row */
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em; /* Shifts accented text left by 1.5em */
+        width: calc(100% + 1.5em); /* Aligns accented text to the right to compensate for the left shift of 1.5em  */
+    }
+}
+
+/* --- Experience --- */
+.my-experience {
+    background: var(--clr-mid);
+    background-image: url(../img/services-bg.jpg);
+    background-size: cover; /* Prevents image from repeating */
+    background-blend-mode: multiply; /* Blends background image into the background color */
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.section__title--experience {
+    color: var(--clr-accent);
+    position: relative;
+}
+
+    /* Small line between title and text underneath */
+    .section__title--experience::after {
+        content: '';
+        display: block;
+        width: 30%;
+        height: 1px;
+        margin: .5em auto 1em;
+        background: var(--clr-light);
+        opacity: .3;
+    }
+
+.experiences {
+    margin-bottom: 5em;
+}
+
+.experience {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Redefines layout for screens larger than 800px */
+@media (min-width: 800px) {
+    .experiences {
+        display: flex;
+        max-width: 1000px;
+        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .experience + .experience {
+        margin-left: 2em;
+    }
+}
+
+/* --- Who I Am --- */
+.about-me {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-me__img {
+    box-shadow: var(--bs);
+    border: .5em solid var(--clr-dark);
+}
+
+/* Redefines layout for screens larger than 600px */
+@media (min-width: 600px) {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: "title img" "subtitle img" "text img";
+        grid-column-gap: 2em;
+    }
+
+    .section__title--aboutme {
+        grid-area: title;
+    }
+
+    .section__subtitle--aboutme {
+        grid-column: 1 / -1; /* Starts at the top, ends at the bottom row */
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 2em);
+        padding-left: 1em;
+        padding-right: calc(200px + 4em); /* Prevents text from falling behind the image, accounting for the image size (200px), padding on the left (2em), and the grid-column-gap (2em)*/
+    }
+
+    .about-me__img {
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+        border: .5em solid var(--clr-dark);
+    }
+}
+
+/* --- Portfolio --- */
+.my-work {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.section__subtitle--work {
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 2em;
+}
+
+.portfolio {
+    display: grid;
+    /*grid-template-columns: repeat(3, 1fr); /* Sets the width of the grid to 3 images */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Allows the grid to auto-size itself as the browser scales */
+}
+
+.portfolio__item {
+    background: var(--clr-accent); /* Established for transition/transform function - background will peak through on hover */
+    overflow: hidden; /* Prevents image from expanding on hover */
+}
+
+.portfolio__img {
+    transition: transform 750ms cubic-bezier(.5, 0, .5, 1), opacity 250ms linear; /* Sets transform for hover effect */
+}
+
+/* Adds outline to objects accessed via the "TAB" key above the adjacent images */
+.portfolio__item:focus {
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio__img:hover,
+.portfolio_item:focus .portfolio_img {
+    transform: scale(1.2);
+    opacity: .5;
+}
+
+/* --- Footer --- */
+.footer {
+    background: #111;
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 2.5em 0;
+    font-size: var(--fs-h3);
+}
+
+    .footer a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+.footer__link {
+    font-weight: var(--fw-bold);
+}
+
+    .footer__link:hover,
+    .social-list__link:hover {
+        opacity: .7;
+    }
+
+    .footer__link:hover {
+        text-decoration: underline;
+    }
+
+.social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0 0;
+    padding: 0;
+}
+
+.social-list__item {
+    margin: 0 .5em;
+}
+
+.social-list__link {
+    padding: .5em;
+}
+
+/* --- Portfolio Items --- */
+.portfolio-item-individual {
+    padding: 0 2em 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+    .portfolio-item-individual p {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Set custom properties */
+:root {
+    --ff-primary: 'Source Sans Pro', sans-serif;
+    --ff-secondary: 'Source Code Pro', monospace;
+    --fw-reg: 300;
+    --fw-bold: 900;
+    --clr-light: #fff;
+    --clr-dark: #303030;
+    --clr-accent: #9779ff; /* Purple */
+    --clr-accent2: #ff8500; /* Orange */
+    --clr-accent3: #16e0bd; /* Mint/Green */
+    --clr-mid: #646464;
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+    /* Creates box shadow for image */
+    --bs: .25em .25em .75em rgba(0, 0, 0, .25), .125em .125em .25em rgba(0, 0, 0, .15);
+}
+
+/* Redefines font sizes for screens larger than 800px */
+@media (min-width: 800px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.755rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+/* Style Settings */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--clr-light);
+    color: var(--clr-dark);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+section {
+    padding: 5em 2em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+strong {
+    font-weight: var(--fw-bold);
+}
+
+/* Adds outline to objects accessed via the "TAB" key */
+:focus {
+    outline: 3px solid var(--clr-accent);
+    outline-offset: 3px;
+}
+
+/* --- Button --- */
+.btn {
+    display: inline-block;
+    padding: .75em 2.5em;
+    background: var(--clr-accent);
+    color: var(--clr-dark);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--fw-bold);
+    transition: transform 100ms ease-in-out; /* Eases "hover" transformation */
+}
+
+    .btn:hover {
+        transform: scale(1.1); /* Scales button up when hovering over button */
+    }
+
+/* Typography Settings */
+h1, h2, h3 {
+    line-height: 1;
+    margin: 0;
+}
+
+h1 {
+    font-size: var(--fs-h1);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+.section__title {
+    margin-bottom: .25em;
+}
+
+.section__title--intro {
+    font-weight: var(--fw-reg);
+}
+
+    /* Separates "strong" text onto a new line */
+    .section__title--intro strong {
+        display: block;
+    }
+
+.section__subtitle {
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+.section__subtitle--intro,
+.section__subtitle--aboutme {
+    background: var(--clr-accent);
+    padding: .25em 1em;
+    font-family: var(--ff-secondary);
+    margin-bottom: 1em;
+}
+
+/* --- Header --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.logo {
+    max-width: 100px;
+}
+
+
+/* --- Navigation Menu --- */
+.nav {
+    position: fixed;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    top: 0;
+    bottom: 0;
+    left: 70%;
+    right: 0;
+    z-index: 100;
+    transform: translateX(100%);
+    transition: transform 500ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    height: 30%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__link {
+    color: inherit;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h3);
+    text-decoration: none;
+}
+
+    .nav__link:hover {
+        color: var(--clr-accent);
+        color: var(--clr-accent);
+    }
+
+.nav-toggle {
+    padding: .5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+    z-index: 1000;
+}
+
+.nav-open .nav {
+    transform: translateX(0);
+}
+
+.nav-open .nav-toggle {
+    position: fixed;
+}
+
+.nav-open .hamburger {
+    transform: rotate(.625turn); /* Used in conjunction with the .nav-open .hamburger::after transform effect to turn hamburger into an X */
+}
+
+    .nav-open .hamburger::before {
+        transform: rotate(90deg) translateX(-6px); /* Used in conjunction with the .nav-open .hamburger transform effect to turn hamburger into an X */
+    }
+
+    .nav-open .hamburger::after {
+        opacity: 0;
+    }
+
+/* --- Hamburger Menu Icon --- */
+.hamburger {
+    display: block;
+    position: relative;
+}
+
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        background: var(--clr-accent);
+        width: 2em;
+        height: 3px;
+        border-radius: 1em;
+        transition: transform 250ms ease-in-out;
+    }
+
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
+
+        .hamburger::before {
+            top: 6px;
+        }
+
+        .hamburger::after {
+            bottom: 6px;
+        }
+
+/* --- Introduction --- */
+.intro {
+    position: relative;
+}
+
+.intro__image {
+    box-shadow: var(--bs);
+    border: .5em solid var(--clr-dark);
+}
+
+/* Redefines layout for screens larger than 600px */
+@media (min-width: 600px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-column-gap: 1em;
+        grid-template-areas: "img title" "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro__image {
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2; /* Sets image to appear above the accented text */
+        border: .5em solid var(--clr-dark);
+    }
+
+    /* Repositions accented text banner */
+    .section__subtitle--intro {
+        align-self: start;
+        grid-column: -1 / 1; /* Starts at the bottom, ends at the top row */
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em; /* Shifts accented text left by 1.5em */
+        width: calc(100% + 1.5em); /* Aligns accented text to the right to compensate for the left shift of 1.5em  */
+    }
+}
+
+/* --- Experience --- */
+.my-experience {
+    background: var(--clr-mid);
+    background-image: url(../img/services-bg.jpg);
+    background-size: cover; /* Prevents image from repeating */
+    background-blend-mode: multiply; /* Blends background image into the background color */
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.section__title--experience {
+    color: var(--clr-accent);
+    position: relative;
+}
+
+    /* Small line between title and text underneath */
+    .section__title--experience::after {
+        content: '';
+        display: block;
+        width: 30%;
+        height: 1px;
+        margin: .5em auto 1em;
+        background: var(--clr-light);
+        opacity: .3;
+    }
+
+.experiences {
+    margin-bottom: 5em;
+}
+
+.experience {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Redefines layout for screens larger than 800px */
+@media (min-width: 800px) {
+    .experiences {
+        display: flex;
+        max-width: 1000px;
+        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .experience + .experience {
+        margin-left: 2em;
+    }
+}
+
+/* --- Who I Am --- */
+.about-me {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.about-me__img {
+    box-shadow: var(--bs);
+    border: .5em solid var(--clr-dark);
+}
+
+/* Redefines layout for screens larger than 600px */
+@media (min-width: 600px) {
+    .about-me {
+        display: grid;
+        grid-template-columns: 1fr 200px;
+        grid-template-areas: "title img" "subtitle img" "text img";
+        grid-column-gap: 2em;
+    }
+
+    .section__title--aboutme {
+        grid-area: title;
+    }
+
+    .section__subtitle--aboutme {
+        grid-column: 1 / -1; /* Starts at the top, ends at the bottom row */
+        grid-row: 2;
+        position: relative;
+        left: -1em;
+        width: calc(100% + 2em);
+        padding-left: 1em;
+        padding-right: calc(200px + 4em); /* Prevents text from falling behind the image, accounting for the image size (200px), padding on the left (2em), and the grid-column-gap (2em)*/
+    }
+
+    .about-me__img {
+        grid-area: img;
+        position: relative;
+        z-index: 2;
+        border: .5em solid var(--clr-dark);
+    }
+}
+
+/* --- Portfolio --- */
+.my-work {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    text-align: center;
+}
+
+.section__subtitle--work {
+    color: var(--clr-accent);
+    font-weight: var(--fw-bold);
+    margin-bottom: 2em;
+}
+
+.portfolio {
+    display: grid;
+    /*grid-template-columns: repeat(3, 1fr); /* Sets the width of the grid to 3 images */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Allows the grid to auto-size itself as the browser scales */
+}
+
+.portfolio__item {
+    background: var(--clr-accent); /* Established for transition/transform function - background will peak through on hover */
+    overflow: hidden; /* Prevents image from expanding on hover */
+}
+
+.portfolio__img {
+    transition: transform 750ms cubic-bezier(.5, 0, .5, 1), opacity 250ms linear; /* Sets transform for hover effect */
+}
+
+/* Adds outline to objects accessed via the "TAB" key above the adjacent images */
+.portfolio__item:focus {
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio__img:hover,
+.portfolio_item:focus .portfolio_img {
+    transform: scale(1.2);
+    opacity: .5;
+}
+
+/* --- Footer --- */
+.footer {
+    background: #111;
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 2.5em 0;
+    font-size: var(--fs-h3);
+}
+
+    .footer a {
+        color: inherit;
+        text-decoration: none;
+    }
 
 .footer__link {
     font-weight: var(--fw-bold);
