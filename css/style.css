@@ -477,3 +477,20 @@ header {
         margin-left: auto;
         margin-right: auto;
     }
+
+    .portfolio__image {
+        width: 100%;
+        box-shadow: var(--bs);
+        border: .5em solid var(--clr-dark);
+    }
+
+    @media (min-width: 600px) {
+        .portfolio__image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%;
+            box-shadow: var(--bs);
+            border: .5em solid var(--clr-dark);
+        }
+    }
