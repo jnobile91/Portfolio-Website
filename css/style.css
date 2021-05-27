@@ -86,9 +86,9 @@ strong {
     transition: transform 100ms ease-in-out; /* Eases "hover" transformation */
 }
 
-.btn:hover {
-    transform: scale(1.1); /* Scales button up when hovering over button */
-}
+    .btn:hover {
+        transform: scale(1.1); /* Scales button up when hovering over button */
+    }
 
 /* Typography Settings */
 h1, h2, h3 {
@@ -117,10 +117,10 @@ h3 {
     margin-left: .5em;
 }
 
-/* Separates "strong" text onto a new line */
-.section__title--intro strong {
-    display: block;
-}
+    /* Separates "strong" text onto a new line */
+    .section__title--intro strong {
+        display: block;
+    }
 
 .section__subtitle {
     margin: 0;
@@ -179,10 +179,10 @@ header {
     text-decoration: none;
 }
 
-.nav__link:hover {
-    color: var(--clr-accent);
-    color: var(--clr-accent);
-}
+    .nav__link:hover {
+        color: var(--clr-accent);
+        color: var(--clr-accent);
+    }
 
 .nav-toggle {
     padding: .5em;
@@ -207,13 +207,13 @@ header {
     transform: rotate(.625turn); /* Used in conjunction with the .nav-open .hamburger::after transform effect to turn hamburger into an X */
 }
 
-.nav-open .hamburger::before {
-    transform: rotate(90deg) translateX(-6px); /* Used in conjunction with the .nav-open .hamburger transform effect to turn hamburger into an X */
-}
+    .nav-open .hamburger::before {
+        transform: rotate(90deg) translateX(-6px); /* Used in conjunction with the .nav-open .hamburger transform effect to turn hamburger into an X */
+    }
 
-.nav-open .hamburger::after {
-    opacity: 0;
-}
+    .nav-open .hamburger::after {
+        opacity: 0;
+    }
 
 /* --- Hamburger Menu Icon --- */
 .hamburger {
@@ -221,31 +221,31 @@ header {
     position: relative;
 }
 
-.hamburger,
-.hamburger::before,
-.hamburger::after {
-    background: var(--clr-accent);
-    width: 2em;
-    height: 3px;
-    border-radius: 1em;
-    transition: transform 250ms ease-in-out;
-}
+    .hamburger,
+    .hamburger::before,
+    .hamburger::after {
+        background: var(--clr-accent);
+        width: 2em;
+        height: 3px;
+        border-radius: 1em;
+        transition: transform 250ms ease-in-out;
+    }
 
-.hamburger::before,
-.hamburger::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-}
+        .hamburger::before,
+        .hamburger::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+        }
 
-.hamburger::before {
-    top: 6px;
-}
+        .hamburger::before {
+            top: 6px;
+        }
 
-.hamburger::after {
-    bottom: 6px;
-}
+        .hamburger::after {
+            bottom: 6px;
+        }
 
 /* --- Introduction --- */
 .intro {
@@ -414,11 +414,11 @@ header {
     z-index: 2;
 }
 
-.portfolio__img:hover,
-.portfolio__item:focus .portfolio__img {
-    transform: scale(1.2);
-    opacity: .5;
-}
+    .portfolio__img:hover,
+    .portfolio__item:focus .portfolio__img {
+        transform: scale(1.2);
+        opacity: .5;
+    }
 
 /* --- Footer --- */
 .footer {
