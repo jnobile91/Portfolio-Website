@@ -360,6 +360,7 @@ header {
 
     .section__title--aboutme {
         grid-area: title;
+        width: 90%;
     }
 
     .section__subtitle--aboutme {
@@ -367,9 +368,10 @@ header {
         grid-row: 2;
         position: relative;
         left: -1em;
-        width: calc(100% + 2em);
+        width: calc(80%);
         padding-left: 1em;
-        padding-right: calc(200px + 4em); /* Prevents text from falling behind the image, accounting for the image size (200px), padding on the left (2em), and the grid-column-gap (2em)*/
+        padding-right: calc(100px + 2em);
+        /*padding-right: calc(200px + 4em); /* Prevents text from falling behind the image, accounting for the image size (200px), padding on the left (2em), and the grid-column-gap (2em)*/
     }
 
     .about-me__img {
