@@ -43,21 +43,25 @@
 		<h1 class="section__title section__title--intro">
 			Basic PHP <strong>Database Application</strong>
 		</h1>
-		<p class="section__subtitle section__subtitle--intro">PHP, SQL, JavaScript</p>
+		<p class="section__subtitle section__subtitle--intro">HTML, PHP, SQL, JavaScript</p>
 		<img src="img/portfolio-04.jpg" alt="Portofolio item" class="intro__image" />
 	</section>
 
 	<div class="portfolio-item-individual">
 		<p>
-			Content coming soon.
+			This project was the first time I constructed a user-facing interface to interact with a database using SQL. It consists of techniques required to create, add, and delete features from a database. I also included user validation techniques in order to require user registration
+			 before interacting with the database.
 		</p>
 		<img src="img/php1.png" alt="Image" class="portfolio__image" />
 		<p>
-			SQL queries via placeholders in PHP. User authentication. Hashing passwords. User validation. Data input validation.
+			Techniques that were implemented include user validation and password hashing. Using validation methods, users are required to register with the platform before accessing the database. Passwords are stored using a SHA-256 hashing technique, then adding "salt" to the beginning and end of each hashed password.
+			 The "salt" is randomly generated via a custom function that creates a string of random characters. Once a user account is created, the login credentials are validated using custom functions and JavaScript validation. This project also utilizes session management, ensuring that the user has a seamless connection
+			 each time they are accessing the application, complete with proper logout functionality. List, Search, Add, and Delete functionality utilizes placeholder queries to properly interact with the database. If entering a new entry the input is ran through several validation checks to ensure data integrity.
 		</p>
 		<img src="img/php2.png" alt="Picture of Database Menu" class="portfolio__image" />
 		<p>
-			Neque convallis a cras semper auctor neque vitae tempus quam. Nunc congue nisi vitae suscipit tellus mauris a diam. Semper risus in hendrerit gravida rutrum quisque non tellus orci. Malesuada pellentesque elit eget gravida cum. Feugiat sed lectus vestibulum mattis ullamcorper velit sed. Bibendum enim facilisis gravida neque convallis a cras semper. Vulputate eu scelerisque felis imperdiet. Convallis aenean et tortor at risus viverra adipiscing at in. Purus semper eget duis at tellus at urna condimentum mattis. Ut lectus arcu bibendum at varius vel pharetra vel.
+			I found this project particularly challenging since this was the first time I was creating a thorough application from scratch. Researching the proper functionality of user registration/validation and session management proved to be more involved than my previous programming applications, but was incredibly
+			 rewarding to finally get it working. Most applications these days require user registration, so learning these techniques was exceptionally valuable. 
 		</p>
 		<p>
 			<a class="footer__link" href="https://github.com/jnobile91/PHP-DB-Web-Application">
