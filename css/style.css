@@ -132,6 +132,7 @@ h3 {
     background: var(--clr-accent);
     padding: .25em 1em;
     font-family: var(--ff-secondary);
+    width: 94%;
     margin-bottom: 1em;
 }
 
